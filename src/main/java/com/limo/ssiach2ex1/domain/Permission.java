@@ -1,8 +1,7 @@
-package com.limo.loginregisterlearning.domain;
+package com.limo.ssiach2ex1.domain;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.Set;
@@ -11,6 +10,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Entity
 @Table(name = "permissions")
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Permission {
 
     @Id
@@ -29,6 +29,4 @@ public class Permission {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @ManyToMany(mappedBy = "permissions")
-    private Set<Role> roles;
 }
